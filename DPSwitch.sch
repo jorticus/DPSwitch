@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L visclib:HD3SS215 U1
-U 1 1 5FCC9A98
-P 5400 1750
-F 0 "U1" H 4500 1550 50  0000 C CNN
-F 1 "HD3SS215" H 5350 1100 50  0000 C CNN
-F 2 "Visclib:VQFN-56_EP_7.8x7.8_Pitch0.5mm" H 5250 1750 50  0001 C CNN
-F 3 "" H 5250 1750 50  0001 C CNN
-	1    5400 1750
-	1    0    0    -1  
-$EndComp
-$Comp
 L device:R_Small_US R5
 U 1 1 5FCD2DBF
 P 9150 5300
@@ -85,7 +74,7 @@ U 1 1 5FCDBC5B
 P 5700 850
 F 0 "D4" H 5693 595 50  0000 C CNN
 F 1 "PWR" H 5693 686 50  0000 C CNN
-F 2 "LEDs:LED_0603_HandSoldering" H 5700 850 50  0001 C CNN
+F 2 "Visclib:wolfpaw-0.3-illuminated" H 5700 850 50  0001 C CNN
 F 3 "~" H 5700 850 50  0001 C CNN
 	1    5700 850 
 	-1   0    0    1   
@@ -244,17 +233,6 @@ F 3 "" H 10250 2950 50  0001 C CNN
 $EndComp
 Text Notes 1200 3350 1    50   ~ 0
 TODO: VERIFY PINOUT
-$Comp
-L device:D_Small D1
-U 1 1 5FD305A8
-P 1850 850
-F 0 "D1" H 1850 645 50  0000 C CNN
-F 1 "D_Small" H 1850 736 50  0000 C CNN
-F 2 "Diodes_SMD:D_SC-80_HandSoldering" V 1850 850 50  0001 C CNN
-F 3 "~" V 1850 850 50  0001 C CNN
-	1    1850 850 
-	-1   0    0    1   
-$EndComp
 $Comp
 L visclib:V_IN #PWR0101
 U 1 1 5FD3F370
@@ -488,17 +466,6 @@ F 3 "" H 1500 4300 50  0001 C CNN
 $EndComp
 Text Notes 1200 5650 1    50   ~ 0
 TODO: VERIFY PINOUT
-$Comp
-L device:D_Small D2
-U 1 1 5FDA8E27
-P 1850 6950
-F 0 "D2" H 1850 6745 50  0000 C CNN
-F 1 "D_Small" H 1850 6836 50  0000 C CNN
-F 2 "Diodes_SMD:D_SC-80_HandSoldering" V 1850 6950 50  0001 C CNN
-F 3 "~" V 1850 6950 50  0001 C CNN
-	1    1850 6950
-	-1   0    0    1   
-$EndComp
 $Comp
 L visclib:V_IN #PWR0106
 U 1 1 5FDA8E33
@@ -977,8 +944,6 @@ Entry Wire Line
 Text Notes 6600 6200 0    50   ~ 0
 DX_SEL L=DFPA H=DFPB
 Wire Wire Line
-	1950 850  2100 850 
-Wire Wire Line
 	2100 850  2100 750 
 Wire Bus Line
 	2100 1350 3700 1350
@@ -1076,10 +1041,6 @@ Wire Notes Line
 	600  4100 600  750 
 Wire Notes Line
 	600  750  1050 750 
-Wire Wire Line
-	1750 6950 1650 6950
-Wire Wire Line
-	2100 6950 1950 6950
 Wire Bus Line
 	7100 2500 9550 2500
 Text Label 9700 1850 0    50   ~ 0
@@ -1448,8 +1409,6 @@ Wire Wire Line
 	7750 1450 8300 1300
 Wire Wire Line
 	8300 1300 8300 1150
-Wire Wire Line
-	8300 1150 8650 1150
 Connection ~ 8300 1150
 Wire Wire Line
 	6500 5600 6800 5600
@@ -1583,8 +1542,6 @@ Connection ~ 8050 2100
 Wire Wire Line
 	8050 2100 7550 2100
 Wire Wire Line
-	8650 1650 8300 1650
-Wire Wire Line
 	8300 1150 8300 900 
 Wire Wire Line
 	8300 900  8600 900 
@@ -1620,7 +1577,6 @@ F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 8050 1650 50  0001 C CNN
 	2    8050 1650
 	1    0    0    -1  
 $EndComp
-Connection ~ 8300 1650
 $Comp
 L regul:MCP1700-3302E_SOT23 U3
 U 1 1 60BD100D
@@ -1634,7 +1590,6 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826C.pdf" H 4350 850 5
 $EndComp
 Wire Wire Line
 	2100 850  3950 850 
-Connection ~ 2100 850 
 $Comp
 L visclib:GND #PWR0102
 U 1 1 60BE8D70
@@ -1677,7 +1632,7 @@ U 1 1 60C3E607
 P 4850 1000
 F 0 "C16" H 5050 950 50  0000 R CNN
 F 1 "1u" H 5100 1050 50  0000 R CNN
-F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4850 1000 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4850 1000 50  0001 C CNN
 F 3 "~" H 4850 1000 50  0001 C CNN
 	1    4850 1000
 	-1   0    0    1   
@@ -1739,6 +1694,49 @@ Wire Wire Line
 	6100 850  6050 850 
 Wire Wire Line
 	5550 850  5400 850 
+Connection ~ 5400 850 
+Text Notes 7250 3600 0    50   ~ 0
+!! 4GHz Routing !!\n\n50R ±15% Single Ended\n100R ±20% Differential\n\n6mils Wide\n8mils Gap\n20mils Between pairs
+Text Notes 4350 7500 0    50   ~ 0
+DP Routing Guide:\nhttps://www.nxp.com/docs/en/application-note/AN10798.pdf
+$Comp
+L visclib:HD3SS215 U1
+U 1 1 5FCC9A98
+P 5400 1750
+F 0 "U1" H 4500 1550 50  0000 C CNN
+F 1 "HD3SS215" H 5350 1100 50  0000 C CNN
+F 2 "Visclib:VQFN-56_EP_7.8x7.8_Pitch0.5mm" H 5250 1750 50  0001 C CNN
+F 3 "" H 5250 1750 50  0001 C CNN
+	1    5400 1750
+	1    0    0    -1  
+$EndComp
+Connection ~ 2100 850 
+$Comp
+L visclib:BAT54GWJ D2
+U 1 1 60E45C52
+P 1850 850
+F 0 "D2" H 1850 645 50  0000 C CNN
+F 1 "BAT54GWJ" H 1850 736 50  0000 C CNN
+F 2 "Diodes_SMD:D_SOD-123" V 1850 850 50  0001 C CNN
+F 3 "~" V 1850 850 50  0001 C CNN
+	1    1850 850 
+	-1   0    0    1   
+$EndComp
+$Comp
+L visclib:BAT54GWJ D1
+U 1 1 60E46CCE
+P 1750 6950
+F 0 "D1" H 1750 6745 50  0000 C CNN
+F 1 "BAT54GWJ" H 1750 6836 50  0000 C CNN
+F 2 "Diodes_SMD:D_SOD-123" V 1750 6950 50  0001 C CNN
+F 3 "~" V 1750 6950 50  0001 C CNN
+	1    1750 6950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1850 6950 2100 6950
+Wire Wire Line
+	1950 850  2100 850 
 Wire Bus Line
 	7100 2500 7100 4750
 Wire Bus Line
@@ -1758,14 +1756,16 @@ Wire Bus Line
 Wire Bus Line
 	2900 4500 2900 6350
 Wire Bus Line
+	6950 2850 6950 4550
+Wire Bus Line
 	3850 2350 3850 4100
 Wire Bus Line
 	2900 1950 2900 4100
-Wire Bus Line
-	6950 2850 6950 4550
-Connection ~ 5400 850 
-Text Notes 7250 3600 0    50   ~ 0
-!! 4GHz Routing !!\n\n50R ±15% Single Ended\n100R ±20% Differential\n\n5mils Wide\n7mils Gap\n20mils Between pairs
-Text Notes 4350 7500 0    50   ~ 0
-DP Routing Guide:\nhttps://www.nxp.com/docs/en/application-note/AN10798.pdf
+Connection ~ 8300 1650
+Wire Wire Line
+	8650 1650 8300 1650
+Wire Wire Line
+	8300 1150 8650 1150
+Text Notes 5600 1050 0    50   ~ 0
+LOGO
 $EndSCHEMATC
