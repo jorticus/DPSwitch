@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:DPSwitch-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -72,9 +73,9 @@ $Comp
 L device:LED D4
 U 1 1 5FCDBC5B
 P 5700 850
-F 0 "D4" H 5693 595 50  0000 C CNN
-F 1 "PWR" H 5693 686 50  0000 C CNN
-F 2 "Visclib:wolfpaw-0.3-illuminated" H 5700 850 50  0001 C CNN
+F 0 "D4" H 5700 750 50  0000 C CNN
+F 1 "PWR" H 5700 1000 50  0000 C CNN
+F 2 "Visclib:wolfpaw-0.3-illuminated" H 5600 550 50  0000 C CNN
 F 3 "~" H 5700 850 50  0001 C CNN
 	1    5700 850 
 	-1   0    0    1   
@@ -1737,6 +1738,13 @@ Wire Wire Line
 	1850 6950 2100 6950
 Wire Wire Line
 	1950 850  2100 850 
+Connection ~ 8300 1650
+Wire Wire Line
+	8650 1650 8300 1650
+Wire Wire Line
+	8300 1150 8650 1150
+Text Notes 5600 700  0    50   ~ 0
+LOGO
 Wire Bus Line
 	7100 2500 7100 4750
 Wire Bus Line
@@ -1756,16 +1764,20 @@ Wire Bus Line
 Wire Bus Line
 	2900 4500 2900 6350
 Wire Bus Line
-	6950 2850 6950 4550
-Wire Bus Line
 	3850 2350 3850 4100
 Wire Bus Line
 	2900 1950 2900 4100
-Connection ~ 8300 1650
-Wire Wire Line
-	8650 1650 8300 1650
-Wire Wire Line
-	8300 1150 8650 1150
-Text Notes 5600 1050 0    50   ~ 0
-LOGO
+Wire Bus Line
+	6950 2850 6950 4550
+$Comp
+L visclib:Logo LOGO1
+U 1 1 5FD38948
+P 10500 6850
+F 0 "LOGO1" H 10728 6903 60  0000 L CNN
+F 1 "Moth" H 10728 6797 60  0000 L CNN
+F 2 "Project:moth" H 10500 6850 60  0001 C CNN
+F 3 "" H 10500 6850 60  0001 C CNN
+	1    10500 6850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

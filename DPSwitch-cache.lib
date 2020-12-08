@@ -347,6 +347,18 @@ X DC2_N 9 1100 -2100 100 L 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
+# visclib_Logo
+#
+DEF visclib_Logo LOGO 0 40 Y Y 1 F N
+F0 "LOGO" 0 0 60 H V C CNN
+F1 "visclib_Logo" 0 0 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -200 150 200 -150 0 1 0 N
+ENDDRAW
+ENDDEF
+#
 # visclib_V_IN
 #
 DEF visclib_V_IN #PWR 0 0 Y Y 1 F P
