@@ -7,8 +7,8 @@ encoding utf-8
 Sheet 1 1
 Title "DisplayPort KVM"
 Date "2020-12-05"
-Rev "r1"
-Comp "ViscTronics"
+Rev "r2"
+Comp "ViscTronics | jared.geek.nz"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -147,7 +147,7 @@ Entry Wire Line
 Entry Wire Line
 	3850 3850 3950 3750
 Entry Wire Line
-	2900 3650 2800 3550
+	2900 3750 2800 3650
 Wire Wire Line
 	3950 3750 4300 3750
 Wire Wire Line
@@ -243,8 +243,6 @@ F 3 "" H 2100 750 50  0001 C CNN
 	1    2100 750 
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1800 3050
-NoConn ~ 1800 3150
 $Comp
 L visclib:V_IN #PWR0103
 U 1 1 5FD5B06F
@@ -342,7 +340,7 @@ Text Label 4250 3450 2    50   ~ 0
 AUXA_N
 Text Label 4250 3550 2    50   ~ 0
 AUXA_P
-Text Label 2750 3550 2    50   ~ 0
+Text Label 2750 3650 2    50   ~ 0
 HPDA
 $Comp
 L visclib:GND #PWR0104
@@ -423,7 +421,7 @@ Entry Wire Line
 Entry Wire Line
 	3850 6000 3950 5900
 Entry Wire Line
-	2900 6200 2800 6100
+	2900 6300 2800 6200
 Wire Wire Line
 	3950 5900 4300 5900
 Wire Wire Line
@@ -474,8 +472,6 @@ F 3 "" H 2100 6950 50  0001 C CNN
 	1    2100 6950
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1800 5600
-NoConn ~ 1800 5700
 Text Label 4250 4400 2    50   ~ 0
 DB0_N
 Text Label 4250 4500 2    50   ~ 0
@@ -498,7 +494,7 @@ Text Label 4250 5600 2    50   ~ 0
 AUXB_N
 Text Label 4250 5700 2    50   ~ 0
 AUXB_P
-Text Label 2750 6100 2    50   ~ 0
+Text Label 2750 6200 2    50   ~ 0
 HPDB
 $Comp
 L visclib:GND #PWR0107
@@ -594,8 +590,6 @@ Wire Wire Line
 	9200 3950 8400 3950
 Wire Wire Line
 	8400 4150 9350 4150
-Wire Wire Line
-	8400 4750 9950 4750
 Text Label 8450 4150 0    50   ~ 0
 DC0_P
 Text Label 8450 3950 0    50   ~ 0
@@ -894,7 +888,7 @@ AUXC_P
 Text Label 8450 4650 0    50   ~ 0
 AUXC_N
 Wire Wire Line
-	9400 4450 8800 4450
+	9400 4450 9000 4450
 Connection ~ 9400 4450
 Entry Wire Line
 	8400 4450 8300 4350
@@ -939,7 +933,7 @@ Entry Wire Line
 Entry Wire Line
 	2900 3350 2800 3250
 Text Notes 6600 6200 0    50   ~ 0
-DX_SEL L=DFPA H=DFPB
+DX_SEL: L=DFPA H=DFPB
 Wire Wire Line
 	2100 850  2100 750 
 Wire Bus Line
@@ -997,8 +991,8 @@ $Comp
 L device:C_Small C2
 U 1 1 60132BB1
 P 2300 5800
-F 0 "C2" V 2250 5700 50  0000 C CNN
-F 1 "100n" V 2350 5650 50  0000 C CNN
+F 0 "C2" V 2250 5900 50  0000 C CNN
+F 1 "100n" V 2350 5950 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 2300 5800 50  0001 C CNN
 F 3 "~" H 2300 5800 50  0001 C CNN
 	1    2300 5800
@@ -1039,19 +1033,19 @@ Wire Notes Line
 Wire Notes Line
 	600  750  1050 750 
 Wire Bus Line
-	7100 2500 9550 2500
+	7100 2500 9300 2500
 Text Label 9700 1850 0    50   ~ 0
 UC_P
 Text Label 9700 1950 0    50   ~ 0
 UC_N
 Entry Wire Line
-	9550 2050 9650 1950
+	9300 2050 9400 1950
 Entry Wire Line
-	9550 1950 9650 1850
+	9300 1950 9400 1850
 Wire Wire Line
-	9650 1950 9900 1950
+	9400 1950 9450 1950
 Wire Wire Line
-	9900 1850 9650 1850
+	9900 1850 9450 1850
 Entry Wire Line
 	7100 4650 7000 4750
 Entry Wire Line
@@ -1069,15 +1063,15 @@ Wire Wire Line
 Connection ~ 9400 5500
 Connection ~ 9150 5500
 Wire Wire Line
-	9150 5200 9150 4350
+	9150 5200 9150 5100
 Wire Wire Line
 	9150 4350 9950 4350
 Wire Wire Line
 	9950 4250 8900 4250
 Wire Wire Line
-	8900 4250 8900 5200
+	8900 4250 8900 5100
 Wire Wire Line
-	8400 4650 9950 4650
+	8400 4650 9000 4650
 Wire Wire Line
 	8800 4450 8800 2950
 Connection ~ 8800 4450
@@ -1118,8 +1112,6 @@ F 3 "~" H 7500 5650 50  0001 C CNN
 	1    7500 5650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6500 5500 7500 5500
 Wire Wire Line
 	7500 5550 7500 5500
 Connection ~ 7500 5500
@@ -1284,12 +1276,12 @@ Wire Wire Line
 $Comp
 L power:+3.3V #PWR0118
 U 1 1 607127A3
-P 9800 4950
-F 0 "#PWR0118" H 9800 4800 50  0001 C CNN
-F 1 "+3.3V" V 9815 5078 50  0000 L CNN
-F 2 "" H 9800 4950 50  0001 C CNN
-F 3 "" H 9800 4950 50  0001 C CNN
-	1    9800 4950
+P 9600 4950
+F 0 "#PWR0118" H 9600 4800 50  0001 C CNN
+F 1 "+3.3V" V 9615 5078 50  0000 L CNN
+F 2 "" H 9600 4950 50  0001 C CNN
+F 3 "" H 9600 4950 50  0001 C CNN
+	1    9600 4950
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -1335,9 +1327,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 5800 2200 5800
 Wire Wire Line
-	1800 6000 2300 6000
-Wire Wire Line
-	1800 6100 2800 6100
+	1800 6000 2200 6000
 Wire Wire Line
 	1800 5500 2800 5500
 Wire Wire Line
@@ -1359,9 +1349,7 @@ Wire Bus Line
 Wire Wire Line
 	1800 3250 2200 3250
 Wire Wire Line
-	1800 3450 2300 3450
-Wire Wire Line
-	1800 3550 2800 3550
+	1800 3450 2200 3450
 Wire Wire Line
 	1800 2950 2800 2950
 Wire Wire Line
@@ -1544,7 +1532,7 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826C.pdf" H 4350 850 5
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2100 850  3950 850 
+	2100 850  2500 850 
 $Comp
 L visclib:GND #PWR0102
 U 1 1 60BE8D70
@@ -1595,7 +1583,7 @@ $EndComp
 Wire Wire Line
 	4850 1100 4850 1200
 Wire Wire Line
-	4850 1200 4350 1200
+	4850 1200 4700 1200
 Wire Wire Line
 	4650 850  4850 850 
 Wire Wire Line
@@ -1696,7 +1684,7 @@ Connection ~ 8300 1650
 Wire Wire Line
 	8650 1650 8300 1650
 Wire Wire Line
-	8300 1150 8650 1150
+	8300 1150 8550 1150
 Text Notes 5600 700  0    50   ~ 0
 LOGO
 $Comp
@@ -1729,10 +1717,10 @@ Wire Wire Line
 Wire Wire Line
 	7550 700  7550 750 
 $Comp
-L visclib:GND #PWR?
+L visclib:GND #PWR0120
 U 1 1 60089F24
 P 6650 1750
-F 0 "#PWR?" H 6650 1500 50  0001 C CNN
+F 0 "#PWR0120" H 6650 1500 50  0001 C CNN
 F 1 "GND" H 6655 1577 50  0000 C CNN
 F 2 "" H 6650 1750 50  0001 C CNN
 F 3 "" H 6650 1750 50  0001 C CNN
@@ -1751,10 +1739,332 @@ Wire Wire Line
 	8050 700  8050 1050
 Connection ~ 7550 700 
 Connection ~ 8050 700 
+$Comp
+L device:R_Small_US R12
+U 1 1 600813B1
+P 2450 3650
+F 0 "R12" H 2518 3696 50  0000 L CNN
+F 1 "0R" H 2518 3605 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" H 2450 3650 50  0001 C CNN
+F 3 "~" H 2450 3650 50  0001 C CNN
+	1    2450 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L device:R_Small_US R13
+U 1 1 600AFE43
+P 2450 6200
+F 0 "R13" H 2518 6246 50  0000 L CNN
+F 1 "0R" H 2518 6155 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" H 2450 6200 50  0001 C CNN
+F 3 "~" H 2450 6200 50  0001 C CNN
+	1    2450 6200
+	0    1    1    0   
+$EndComp
+$Comp
+L device:R_Small_US R14
+U 1 1 600DF50D
+P 8750 4750
+F 0 "R14" H 8818 4796 50  0000 L CNN
+F 1 "0R" H 8818 4705 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" H 8750 4750 50  0001 C CNN
+F 3 "~" H 8750 4750 50  0001 C CNN
+	1    8750 4750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8650 4750 8400 4750
+Wire Wire Line
+	8850 4750 9000 4750
+$Comp
+L visclib:TP TP19
+U 1 1 60112D0E
+P 9450 1850
+F 0 "TP19" H 9450 1930 20  0001 C CNN
+F 1 "USB_DP" H 9350 2000 50  0000 L CNN
+F 2 "Visclib:TP-1MM" H 9800 1900 50  0001 C CNN
+F 3 "" H 9650 1850 50  0001 C CNN
+	1    9450 1850
+	1    0    0    -1  
+$EndComp
+Connection ~ 9450 1850
+Wire Wire Line
+	9450 1850 9400 1850
+$Comp
+L visclib:TP TP20
+U 1 1 6012B841
+P 9450 1950
+F 0 "TP20" H 9450 2030 20  0001 C CNN
+F 1 "USB_DN" H 9550 2100 50  0000 R CNN
+F 2 "Visclib:TP-1MM" H 9800 2000 50  0001 C CNN
+F 3 "" H 9650 1950 50  0001 C CNN
+	1    9450 1950
+	-1   0    0    1   
+$EndComp
+Connection ~ 9450 1950
+Wire Wire Line
+	9450 1950 9900 1950
+$Comp
+L visclib:TP TP11
+U 1 1 6012CCEE
+P 2500 850
+F 0 "TP11" H 2500 930 20  0001 C CNN
+F 1 "VIN" H 2450 1000 50  0000 L CNN
+F 2 "Visclib:TP-1MM" H 2850 900 50  0001 C CNN
+F 3 "" H 2700 850 50  0001 C CNN
+	1    2500 850 
+	-1   0    0    1   
+$EndComp
+Connection ~ 2500 850 
+Wire Wire Line
+	2500 850  3950 850 
+$Comp
+L visclib:TP TP5
+U 1 1 6012F77B
+P 2200 3250
+F 0 "TP5" H 2200 3330 20  0001 C CNN
+F 1 "AUXA_P" H 2300 3400 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2550 3300 50  0001 C CNN
+F 3 "" H 2400 3250 50  0001 C CNN
+	1    2200 3250
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 3250
+$Comp
+L visclib:TP TP6
+U 1 1 60131682
+P 2200 3450
+F 0 "TP6" H 2200 3530 20  0001 C CNN
+F 1 "AUXA_N" H 2300 3600 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2550 3500 50  0001 C CNN
+F 3 "" H 2400 3450 50  0001 C CNN
+	1    2200 3450
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 3450
+Wire Wire Line
+	2200 3450 2300 3450
+$Comp
+L visclib:TP TP8
+U 1 1 60132E24
+P 2200 5800
+F 0 "TP8" H 2200 5880 20  0001 C CNN
+F 1 "AUXB_P" H 2300 5950 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2550 5850 50  0001 C CNN
+F 3 "" H 2400 5800 50  0001 C CNN
+	1    2200 5800
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 5800
+$Comp
+L visclib:TP TP9
+U 1 1 6016392F
+P 2200 6000
+F 0 "TP9" H 2200 6080 20  0001 C CNN
+F 1 "AUXB_N" H 2300 6150 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2550 6050 50  0001 C CNN
+F 3 "" H 2400 6000 50  0001 C CNN
+	1    2200 6000
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 6000
+Wire Wire Line
+	2200 6000 2300 6000
+$Comp
+L visclib:TP TP7
+U 1 1 60163D7F
+P 2200 3650
+F 0 "TP7" H 2200 3730 20  0001 C CNN
+F 1 "HPDA" H 2300 3800 50  0000 R CNN
+F 2 "Visclib:TP-1MM" H 2550 3700 50  0001 C CNN
+F 3 "" H 2400 3650 50  0001 C CNN
+	1    2200 3650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2550 3650 2800 3650
+Wire Wire Line
+	2350 3650 2200 3650
+Wire Wire Line
+	2050 3650 2050 3550
+Wire Wire Line
+	1800 3550 2050 3550
+Connection ~ 2200 3650
+Wire Wire Line
+	2200 3650 2050 3650
+$Comp
+L visclib:TP TP10
+U 1 1 601AFEE5
+P 2200 6200
+F 0 "TP10" H 2200 6280 20  0001 C CNN
+F 1 "HPDB" H 2300 6350 50  0000 R CNN
+F 2 "Visclib:TP-1MM" H 2550 6250 50  0001 C CNN
+F 3 "" H 2400 6200 50  0001 C CNN
+	1    2200 6200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2550 6200 2800 6200
+Wire Wire Line
+	2350 6200 2200 6200
+Wire Wire Line
+	2050 6200 2050 6100
+Wire Wire Line
+	1800 6100 2050 6100
+Connection ~ 2200 6200
+Wire Wire Line
+	2200 6200 2050 6200
+$Comp
+L visclib:TP TP15
+U 1 1 601E3E89
+P 9000 4450
+F 0 "TP15" H 9000 4530 20  0001 C CNN
+F 1 "AUX_P" H 9100 4600 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 9350 4500 50  0001 C CNN
+F 3 "" H 9200 4450 50  0001 C CNN
+	1    9000 4450
+	1    0    0    -1  
+$EndComp
+Connection ~ 9000 4450
+Wire Wire Line
+	9000 4450 8800 4450
+$Comp
+L visclib:TP TP16
+U 1 1 601E4D5D
+P 9000 4650
+F 0 "TP16" H 9000 4730 20  0001 C CNN
+F 1 "AUX_N" H 9100 4800 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 9350 4700 50  0001 C CNN
+F 3 "" H 9200 4650 50  0001 C CNN
+	1    9000 4650
+	1    0    0    -1  
+$EndComp
+Connection ~ 9000 4650
+Wire Wire Line
+	9000 4650 9950 4650
+$Comp
+L visclib:TP TP17
+U 1 1 601E5014
+P 9000 4750
+F 0 "TP17" H 9000 4830 20  0001 C CNN
+F 1 "HPD" H 9050 4900 50  0000 R CNN
+F 2 "Visclib:TP-1MM" H 9350 4800 50  0001 C CNN
+F 3 "" H 9200 4750 50  0001 C CNN
+	1    9000 4750
+	-1   0    0    1   
+$EndComp
+Connection ~ 9000 4750
+Wire Wire Line
+	9000 4750 9950 4750
+$Comp
+L device:R_Small_US R15
+U 1 1 601E5E4A
+P 9700 4950
+F 0 "R15" H 9550 5000 50  0000 L CNN
+F 1 "0R" H 9550 4900 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" H 9700 4950 50  0001 C CNN
+F 3 "~" H 9700 4950 50  0001 C CNN
+	1    9700 4950
+	0    1    1    0   
+$EndComp
+$Comp
+L visclib:TP TP13
+U 1 1 601E7B99
+P 8550 1150
+F 0 "TP13" H 8550 1230 20  0001 C CNN
+F 1 "DX_SEL" H 8700 1300 50  0000 R CNN
+F 2 "Visclib:TP-1MM" H 8900 1200 50  0001 C CNN
+F 3 "" H 8750 1150 50  0001 C CNN
+	1    8550 1150
+	-1   0    0    1   
+$EndComp
+Connection ~ 8550 1150
+Wire Wire Line
+	8550 1150 8650 1150
+$Comp
+L visclib:TP TP14
+U 1 1 601EB4D0
+P 8900 5100
+F 0 "TP14" H 8900 5180 20  0001 C CNN
+F 1 "CFG1" H 9000 5250 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 9250 5150 50  0001 C CNN
+F 3 "" H 9100 5100 50  0001 C CNN
+	1    8900 5100
+	0    -1   -1   0   
+$EndComp
+Connection ~ 8900 5100
+Wire Wire Line
+	8900 5100 8900 5200
+$Comp
+L visclib:TP TP18
+U 1 1 601EBAA5
+P 9150 5100
+F 0 "TP18" H 9150 5180 20  0001 C CNN
+F 1 "CFG2" H 9250 5250 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 9500 5150 50  0001 C CNN
+F 3 "" H 9350 5100 50  0001 C CNN
+	1    9150 5100
+	0    -1   -1   0   
+$EndComp
+Connection ~ 9150 5100
+Wire Wire Line
+	9150 5100 9150 4350
+$Comp
+L visclib:TP TP4
+U 1 1 601EDD08
+P 1950 5700
+F 0 "TP4" H 1950 5780 20  0001 C CNN
+F 1 "CFG2B" H 2050 5850 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2300 5750 50  0001 C CNN
+F 3 "" H 2150 5700 50  0001 C CNN
+	1    1950 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L visclib:TP TP3
+U 1 1 601EDF02
+P 1950 5600
+F 0 "TP3" H 1950 5680 20  0001 C CNN
+F 1 "CFG1B" H 2050 5750 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2300 5650 50  0001 C CNN
+F 3 "" H 2150 5600 50  0001 C CNN
+	1    1950 5600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1950 5700 1800 5700
+Wire Wire Line
+	1950 5600 1800 5600
+$Comp
+L visclib:TP TP1
+U 1 1 60224C70
+P 1950 3050
+F 0 "TP1" H 1950 3130 20  0001 C CNN
+F 1 "CFG1A" H 2050 3200 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2300 3100 50  0001 C CNN
+F 3 "" H 2150 3050 50  0001 C CNN
+	1    1950 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L visclib:TP TP2
+U 1 1 60225AF5
+P 1950 3150
+F 0 "TP2" H 1950 3230 20  0001 C CNN
+F 1 "CFG2A" H 2050 3300 50  0001 R CNN
+F 2 "Visclib:TP-1MM" H 2300 3200 50  0001 C CNN
+F 3 "" H 2150 3150 50  0001 C CNN
+	1    1950 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1950 3050 1800 3050
+Wire Wire Line
+	1800 3150 1950 3150
 Wire Bus Line
 	7100 2500 7100 4750
 Wire Bus Line
-	9550 1950 9550 2500
+	9300 1950 9300 2500
 Wire Bus Line
 	1950 7250 1950 7400
 Wire Bus Line
@@ -1775,4 +2085,33 @@ Wire Bus Line
 	2900 1950 2900 4100
 Wire Bus Line
 	6950 2850 6950 4550
+$Comp
+L visclib:TP TP21
+U 1 1 6028BF32
+P 4700 1200
+F 0 "TP21" H 4700 1280 20  0001 C CNN
+F 1 "GND" H 4800 1350 50  0000 R CNN
+F 2 "Visclib:TP-1MM" H 5050 1250 50  0001 C CNN
+F 3 "" H 4900 1200 50  0001 C CNN
+	1    4700 1200
+	-1   0    0    1   
+$EndComp
+Connection ~ 4700 1200
+Wire Wire Line
+	4700 1200 4350 1200
+Wire Wire Line
+	6500 5500 7500 5500
+$Comp
+L visclib:Logo LOGO2
+U 1 1 602E67FF
+P 9700 6850
+F 0 "LOGO2" H 9928 6903 60  0000 L CNN
+F 1 "OSHW" H 9928 6797 60  0000 L CNN
+F 2 "SFAesthetics:OSHW-LOGO-M" H 9700 6850 60  0001 C CNN
+F 3 "" H 9700 6850 60  0001 C CNN
+	1    9700 6850
+	1    0    0    -1  
+$EndComp
+Text Notes 7450 1850 0    50   ~ 0
+SR Flip Flop
 $EndSCHEMATC

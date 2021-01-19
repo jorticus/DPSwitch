@@ -359,6 +359,22 @@ S -200 150 200 -150 0 1 0 N
 ENDDRAW
 ENDDEF
 #
+# visclib_TP
+#
+DEF visclib_TP TP 0 30 N N 1 F N
+F0 "TP" 0 80 20 H I C CNN
+F1 "visclib_TP" 0 200 50 V V C CNN
+F2 "Visclib:TP-1MM" 350 50 50 H I C CNN
+F3 "" 200 0 50 H I C CNN
+$FPLIST
+ TP*
+$ENDFPLIST
+DRAW
+C 0 80 30 0 1 0 N
+X 1 1 0 0 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # visclib_V_IN
 #
 DEF visclib_V_IN #PWR 0 0 Y Y 1 F P
